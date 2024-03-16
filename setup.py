@@ -22,7 +22,7 @@ setup(
         ]
     },
     install_requires=["requests==2.31.0", "beautifulsoup4==4.11.1", "urllib3==1.26.18"],
-    project_urls={  # Optional
+    project_urls={
         "Source": "https://github.com/ranjan-mohanty/amazon-product-details-scraper",
     },
 )
