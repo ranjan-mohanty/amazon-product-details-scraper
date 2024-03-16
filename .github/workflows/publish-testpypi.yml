@@ -1,20 +1,22 @@
-name: Publish - PyPI
+name: Publish - TestPyPI
 on:
   push:
-    tags-ignore:
-      - "!*-rc[0-9]+"
+    tags:
+      - "*-rc[0-9]+"
 
 jobs:
   build:
     uses: ./.github/workflows/build.yml
-  publish-to-pypi:
-    name: Publish to PyPI
+  publish-to-testpypi:
+    name: Publish to TestPyPI
     needs:
       - build
     runs-on: ubuntu-latest
+
     environment:
-      name: pypi
-      url: https://pypi.org/p/amazon-product-details-scraper
+      name: testpypi
+      url: https://test.pypi.org/p/amazon-product-details-scraper
+
     permissions:
       id-token: write
 
@@ -24,13 +26,14 @@ jobs:
         with:
           name: python-package-distributions
           path: dist/
-      - name: Publish distribution to PyPI
+      - name: Publish distribution to TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
-
+        with:
+          repository-url: https://test.pypi.org/legacy/
   github-release:
     name: Release
     needs:
-      - publish-to-pypi
+      - publish-to-testpypi
     runs-on: ubuntu-latest
 
     permissions:
@@ -57,6 +60,7 @@ jobs:
           '${{ github.ref_name }}'
           --repo '${{ github.repository }}'
           --notes-from-tag
+          --prerelease
       - name: Upload artifact signatures to GitHub Release
         env:
           GITHUB_TOKEN: ${{ github.token }}

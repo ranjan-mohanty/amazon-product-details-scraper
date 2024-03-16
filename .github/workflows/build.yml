@@ -2,8 +2,8 @@ name: Build
 on:
   workflow_call:
   push:
-    branches-ignore:
-      - main
+    branches:
+      - "**"
     tags-ignore:
       - "**"
 

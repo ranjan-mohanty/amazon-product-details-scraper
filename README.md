@@ -14,9 +14,9 @@ This script helps you scrape product details from Amazon product pages. It extra
 
 - Python 3 (tested with 3.7+)
 - Libraries:
-  - requests: 2.27.1
-  - beautifulsoup4: 4.11.1
-  - urllib3: 1.26.6
+  - requests
+  - beautifulsoup4
+  - urllib3
 
 **Instructions:**
 
