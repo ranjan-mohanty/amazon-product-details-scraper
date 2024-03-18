@@ -7,7 +7,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="amazon-product-details-scraper",
-    version="1.0.1",
+    version="1.0.2-rc1",
     description="Scrapes product details from Amazon product pages and also downloads the images",
     long_description=long_description,
     long_description_content_type="text/markdown",
