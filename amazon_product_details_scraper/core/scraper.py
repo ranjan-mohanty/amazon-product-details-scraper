@@ -2,11 +2,15 @@ import os
 import re
 import json
 import codecs
+from urllib3.util.url import parse_url
 
 import requests
 from bs4 import BeautifulSoup
 
-from amazon_product_details_scraper.config import DEFAULT_OUTPUT_FILENAME
+from amazon_product_details_scraper.config import (
+    DEFAULT_OUTPUT_FILENAME,
+    VALID_DOMAIN_NAMES,
+)
 from amazon_product_details_scraper.core.utils import (
     create_folder,
     extract_image_extension,
@@ -31,7 +35,8 @@ def get_product_detail(url):
     Raises:
         Exception: An exception may be raised if there's an issue fetching or parsing the product details.
     """
-
+    if not is_valid_url(url):
+        raise Exception("Invalid amazon product URL")
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
     }
@@ -96,3 +101,27 @@ def download_product_images(image_urls, output_dir):
     for i, image_url in enumerate(image_urls, start=1):
         file_name = f"image_{i}.{extract_image_extension(image_url)}"
         download_image(image_url, output_dir, file_name)
+
+
+def is_valid_url(url):
+    """Validates the provided URL.
+
+    This function validates the URL and checks if the hostname is a valid domain name.
+
+    Args:
+        url (str): The URL to validate.
+
+    Returns:
+        bool: True if the URL is valid, False otherwise.
+    """
+
+    try:
+        parsed_url = parse_url(url)
+        if not parsed_url.netloc or not parsed_url.scheme:
+            return False  # Not a valid URL format
+        domain = parsed_url.netloc.lower()
+
+        # Check if the domain ends with any of the valid domains
+        return any(domain.endswith(tld.lower()) for tld in VALID_DOMAIN_NAMES)
+    except Exception as e:
+        return False

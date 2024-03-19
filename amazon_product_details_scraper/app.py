@@ -67,6 +67,7 @@ def main():
         url_list = [input_url]
     else:
         try:
+            url_list_path = os.path.normpath(url_list_path)
             url_list = read_file(url_list_path)
         except FileNotFoundError as e:
             logging.error(f"Error: URL list file not found: {url_list_path}")
@@ -82,6 +83,7 @@ def main():
                 # Log details with indentation for readability
                 # logging.info(json.dumps(product_details, indent=2))
 
+                output_dir = os.path.normpath(output_dir)
                 product_output_dir = os.path.join(output_dir, f"item_{item_num}")
                 create_folder(product_output_dir, overwrite=True)
 
@@ -95,7 +97,7 @@ def main():
             else:
                 logging.error(f"Failed to fetch product details for {url}")
         except Exception as e:
-            logging.exception(f"Failed to fetch product details for {url}", e)
+            logging.error(f"Failed to fetch product details for {url}: {e}")
 
 
 if __name__ == "__main__":
