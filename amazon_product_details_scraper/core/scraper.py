@@ -1,11 +1,12 @@
 import os
 import re
 import json
+import uuid
 import codecs
-from urllib3.util.url import parse_url
-
 import requests
+
 from bs4 import BeautifulSoup
+from urllib3.util.url import parse_url
 
 from amazon_product_details_scraper.config import (
     DEFAULT_OUTPUT_FILENAME,
@@ -46,6 +47,9 @@ def get_product_detail(url):
 
     soup = BeautifulSoup(response.content, "html.parser")
 
+    asin_element = soup.find("input", id="ASIN")
+    id = asin_element["value"] if asin_element else uuid.uuid4()
+
     title_element = soup.find("span", id="productTitle")
     title = title_element.text.strip() if title_element else None
 
@@ -63,6 +67,7 @@ def get_product_detail(url):
                 image_urls.extend(re.findall(image_url_pattern, script_text))
 
     return {
+        "id": id,
         "title": title,
         "description": description,
         "image_urls": image_urls,
