@@ -84,7 +84,7 @@ def main():
                 # logging.info(json.dumps(product_details, indent=2))
 
                 output_dir = os.path.normpath(output_dir)
-                product_output_dir = os.path.join(output_dir, f"item_{item_num}")
+                product_output_dir = os.path.join(output_dir, product_details["id"])
                 create_folder(product_output_dir, overwrite=True)
 
                 write_product_details(product_details, product_output_dir)

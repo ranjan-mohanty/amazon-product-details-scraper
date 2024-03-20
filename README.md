@@ -1,14 +1,15 @@
 ## Amazon Product Details Scraper
 
-[![GitHub Release](https://img.shields.io/github/v/release/ranjan-mohanty/amazon-product-details-scraper)](https://github.com/ranjan-mohanty/amazon-product-details-scraper/releases)
 [![GitHub License](https://img.shields.io/github/license/ranjan-mohanty/amazon-product-details-scraper)](https://github.com/ranjan-mohanty/amazon-product-details-scraper/blob/main/LICENSE)
+[![GitHub Release](https://img.shields.io/github/v/release/ranjan-mohanty/amazon-product-details-scraper)](https://github.com/ranjan-mohanty/amazon-product-details-scraper/releases)
 [![PyPI - Version](https://img.shields.io/pypi/v/amazon-product-details-scraper)](https://pypi.org/project/amazon-product-details-scraper/)
-[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/ranjan-mohanty/amazon-product-details-scraper/build.yml)](https://github.com/ranjan-mohanty/amazon-product-details-scraper/actions/workflows/build.yml)
 [![Downloads](https://static.pepy.tech/badge/amazon-product-details-scraper)](https://pepy.tech/project/amazon-product-details-scraper)
-[![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/ranjan-mohanty/amazon-product-details-scraper)](https://github.com/ranjan-mohanty/amazon-product-details-scraper/issues)
-![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/ranjan-mohanty/amazon-product-details-scraper)
 [![GitHub forks](https://img.shields.io/github/forks/ranjan-mohanty/amazon-product-details-scraper)](https://github.com/ranjan-mohanty/amazon-product-details-scraper/forks)
 [![GitHub Repo stars](https://img.shields.io/github/stars/ranjan-mohanty/amazon-product-details-scraper)](https://github.com/ranjan-mohanty/amazon-product-details-scraper/stargazers)
+
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/ranjan-mohanty/amazon-product-details-scraper/build.yml)](https://github.com/ranjan-mohanty/amazon-product-details-scraper/actions/workflows/build.yml)
+[![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/ranjan-mohanty/amazon-product-details-scraper)](https://github.com/ranjan-mohanty/amazon-product-details-scraper/issues)
+![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/ranjan-mohanty/amazon-product-details-scraper)
 
 This script helps you scrape product details from Amazon product pages. It extracts information like title, description, and image URLs, saving them to JSON files.
 
