@@ -48,7 +48,7 @@ def get_product_detail(url):
     soup = BeautifulSoup(response.content, "html.parser")
 
     asin_element = soup.find("input", id="ASIN")
-    id = asin_element["value"] if asin_element else uuid.uuid4()
+    id = asin_element["value"] if asin_element else str(uuid.uuid4())
 
     title_element = soup.find("span", id="productTitle")
     title = title_element.text.strip() if title_element else None
