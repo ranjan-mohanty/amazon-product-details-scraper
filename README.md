@@ -8,6 +8,7 @@
 [![GitHub Repo stars](https://img.shields.io/github/stars/ranjan-mohanty/amazon-product-details-scraper)](https://github.com/ranjan-mohanty/amazon-product-details-scraper/stargazers)
 
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/ranjan-mohanty/amazon-product-details-scraper/build.yml)](https://github.com/ranjan-mohanty/amazon-product-details-scraper/actions/workflows/build.yml)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/ranjan-mohanty/amazon-product-details-scraper/badge)](https://securityscorecards.dev/viewer/?uri=github.com/ranjan-mohanty/amazon-product-details-scraper)
 [![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/ranjan-mohanty/amazon-product-details-scraper)](https://github.com/ranjan-mohanty/amazon-product-details-scraper/issues)
 ![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/ranjan-mohanty/amazon-product-details-scraper)
 
