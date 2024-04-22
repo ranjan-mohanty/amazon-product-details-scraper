@@ -1,5 +1,6 @@
 ## Amazon Product Details Scraper
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b89627c398a242c59ed39b09e7444670)](https://app.codacy.com/gh/ranjan-mohanty/amazon-product-details-scraper?utm_source=github.com&utm_medium=referral&utm_content=ranjan-mohanty/amazon-product-details-scraper&utm_campaign=Badge_Grade)
 [![GitHub License](https://img.shields.io/github/license/ranjan-mohanty/amazon-product-details-scraper)](https://github.com/ranjan-mohanty/amazon-product-details-scraper/blob/main/LICENSE)
 [![GitHub Release](https://img.shields.io/github/v/release/ranjan-mohanty/amazon-product-details-scraper)](https://github.com/ranjan-mohanty/amazon-product-details-scraper/releases)
 [![PyPI - Version](https://img.shields.io/pypi/v/amazon-product-details-scraper)](https://pypi.org/project/amazon-product-details-scraper/)
