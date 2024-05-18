@@ -78,7 +78,7 @@ amazon-scraper --url-list product_urls.txt
 
 This will process each URL in the file and save the scraped details for each product in separate directories within "output".
 
-**Optional: Downloading Images**
+**Optional: Downloading Images:**
 
 ```bash
 amazon-scraper --url https://www.amazon.com/product-1 --download-image
@@ -109,16 +109,16 @@ Scrape details for two products from a file named "products.txt" and download im
 
 1. Create a file named "products.txt" with the following content:
 
-```
-https://www.amazon.com/product-1
-https://www.amazon.com/product-2
-```
+   ```
+   https://www.amazon.com/product-1
+   https://www.amazon.com/product-2
+   ```
 
 2. Run the script with the following command:
 
-```bash
-amazon-scraper --url-list products.txt --download-image
-```
+   ```bash
+   amazon-scraper --url-list products.txt --download-image
+   ```
 
 This will process both URLs in the file, scrape details, create separate output directories for each product, and download images.
 
