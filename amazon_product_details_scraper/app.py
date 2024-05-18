@@ -69,12 +69,12 @@ def main():
         try:
             url_list_path = os.path.normpath(url_list_path)
             url_list = read_file(url_list_path)
-        except FileNotFoundError as e:
+        except FileNotFoundError:
             logging.error(f"Error: URL list file not found: {url_list_path}")
             exit(1)
 
     # Process each product URL
-    for item_num, url in enumerate(url_list, start=1):
+    for url in enumerate(url_list, start=1):
         try:
             product_details = get_product_detail(url)
 

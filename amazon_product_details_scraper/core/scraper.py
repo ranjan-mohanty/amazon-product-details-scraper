@@ -1,3 +1,4 @@
+import logging
 import os
 import re
 import json
@@ -12,11 +13,7 @@ from amazon_product_details_scraper.config import (
     DEFAULT_OUTPUT_FILENAME,
     VALID_DOMAIN_NAMES,
 )
-from amazon_product_details_scraper.core.utils import (
-    create_folder,
-    extract_image_extension,
-    download_image,
-)
+from amazon_product_details_scraper.core.utils import create_folder, download_image, extract_image_extension
 
 
 def get_product_detail(url):
@@ -39,16 +36,17 @@ def get_product_detail(url):
     if not is_valid_url(url):
         raise Exception("Invalid amazon product URL")
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" +
+        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
     }
 
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, timeout=10000)
     response.raise_for_status()  # Raise an exception for non-200 status codes
 
     soup = BeautifulSoup(response.content, "html.parser")
 
     asin_element = soup.find("input", id="ASIN")
-    id = asin_element["value"] if asin_element else str(uuid.uuid4())
+    item_id = asin_element["value"] if asin_element else str(uuid.uuid4())
 
     title_element = soup.find("span", id="productTitle")
     title = title_element.text.strip() if title_element else None
@@ -67,7 +65,7 @@ def get_product_detail(url):
                 image_urls.extend(re.findall(image_url_pattern, script_text))
 
     return {
-        "id": id,
+        "id": item_id,
         "title": title,
         "description": description,
         "image_urls": image_urls,
@@ -129,4 +127,5 @@ def is_valid_url(url):
         # Check if the domain ends with any of the valid domains
         return any(domain.endswith(tld.lower()) for tld in VALID_DOMAIN_NAMES)
     except Exception as e:
+        logging.error(f"Error validating URL: {e}")
         return False

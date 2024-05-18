@@ -72,7 +72,7 @@ def download_image(
     image_path = os.path.join(output_dir, file_name)
 
     # Download the image using requests
-    response = requests.get(url, stream=True)
+    response = requests.get(url, stream=True, timeout=10000)
     response.raise_for_status()  # Raise an exception for unsuccessful requests
 
     # Write the image data to the file
