@@ -74,7 +74,7 @@ def main():
             exit(1)
 
     # Process each product URL
-    for url in enumerate(url_list, start=1):
+    for url in url_list:
         try:
             product_details = get_product_detail(url)
 
