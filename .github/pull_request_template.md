@@ -1,8 +1,10 @@
+<!--
 ## Pull Request Template
 
 **Thank you for contributing to the Amazon Product Details Scraper project!**
 
 To streamline the review process, please fill out the details below when creating a pull request.
+-->
 
 **Title:**
 
@@ -34,4 +36,6 @@ To streamline the review process, please fill out the details below when creatin
 
 - Issue reference (if related to an existing issue): # (issue number)
 
+<!--
 **By providing these details, you'll help us review your pull request efficiently. We appreciate your contributions!**
+-->
