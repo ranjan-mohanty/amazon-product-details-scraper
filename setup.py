@@ -21,7 +21,7 @@ setup(
             "amazon-scraper=amazon_product_details_scraper.app:main",
         ]
     },
-    install_requires=["requests==2.32.5", "beautifulsoup4==4.14.3", "urllib3==2.6.3"],
+    install_requires=["requests==2.33.1", "beautifulsoup4==4.14.3", "urllib3==2.6.3"],
     project_urls={
         "Source": "https://github.com/ranjan-mohanty/amazon-product-details-scraper",
     },
